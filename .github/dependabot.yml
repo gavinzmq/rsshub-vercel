@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 5
+    # 新增：忽略特定包的 Major 版本更新
+    ignore:
+      - dependency-name: "rsshub"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@hono/zod-openapi"
+        update-types: ["version-update:semver-major"]
